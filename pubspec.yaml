@@ -1,0 +1,52 @@
+name: coachnewtool
+description: A sample Flutter application with Firebase and Google Sign-In.
+version: 0.0.1
+
+environment:
+  sdk: ">=3.6.0 <4.0.0"
+  flutter: ">=3.10.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  firebase_core: ^3.11.0
+  firebase_auth: ^5.4.2
+  firebase_auth_web: ^5.4.2
+  cloud_firestore: ^5.6.3
+  firebase_storage: ^12.4.2
+  google_sign_in: ^6.2.2
+  image_picker: ^1.0.4   # Додано залежність image_picker
+  url_launcher: ^6.1.10
+  path_provider: ^2.1.2
+  http: ^0.13.5
+  video_player: ^2.8.2  # Додай останню версію
+
+
+
+
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  lints: ^5.1.1
+  test: ^1.24.0
+  flutter_launcher_icons: ^0.14.3
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/app_iconcoach.png"
+  android_adaptive_icon: true
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "assets/icon/app_iconcoach.png"
+
+flutter:
+  uses-material-design: true
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
+        - asset: assets/fonts/Roboto-Bold.ttf
+          weight: 700
