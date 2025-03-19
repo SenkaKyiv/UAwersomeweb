@@ -14,7 +14,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Install Flutter 3.29.0 manually
+      - name: Install Flutter manually
         run: |
           sudo apt-get update
           sudo apt-get install -y curl unzip xz-utils
