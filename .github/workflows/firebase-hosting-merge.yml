@@ -3,7 +3,7 @@ name: Deploy to Firebase Hosting
 on:
   push:
     branches:
-      - main  # Якщо у тебе `master`, заміни на `master`
+      - main  # або master, якщо у тебе master
 
 jobs:
   build_and_deploy:
