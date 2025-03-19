@@ -21,7 +21,7 @@ jobs:
           curl -O https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.13.6-stable.tar.xz
           tar xf flutter_linux_3.13.6-stable.tar.xz
           echo "export PATH=`pwd`/flutter/bin:$PATH" >> $GITHUB_ENV
-          echo "Flutter installed, checking version:"
+          source $GITHUB_ENV
           flutter/bin/flutter doctor
 
       - name: Install dependencies
