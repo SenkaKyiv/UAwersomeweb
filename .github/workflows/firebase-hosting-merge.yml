@@ -9,25 +9,30 @@ jobs:
   build_and_deploy:
     name: Build and Deploy Flutter Web
     runs-on: ubuntu-latest
-    
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.13.6' # Використовуємо конкретну стабільну версію
-          channel: 'stable'
-          architecture: x64
-          cache: true
+      - name: Install Flutter manually
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y curl unzip xz-utils
+          curl -O https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.13.6-stable.tar.xz
+          tar xf flutter_linux_3.13.6-stable.tar.xz
+          echo "export PATH=$PATH:`pwd`/flutter/bin" >> ~/.bashrc
+          source ~/.bashrc
+          flutter doctor
 
       - name: Install dependencies
-        run: flutter pub get
+        run: |
+          source ~/.bashrc
+          flutter pub get
 
       - name: Build Flutter Web
-        run: flutter build web
+        run: |
+          source ~/.bashrc
+          flutter build web
 
       - name: Deploy to Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
